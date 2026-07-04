@@ -2,11 +2,11 @@ from django.shortcuts import render
 from django.http import HttpResponse,JsonResponse
 
 def home_view(request):
-    return HttpResponse("<h1> This is home page <h1>")
+    return render(request,'website/index.html')
 
 def contact_view(request):
-    return HttpResponse("<h1> This is contact page <h1>")
+    return render(request , 'website/contact.html')
 
 def about_view(request):
-    return HttpResponse("<h1> This is about page <h1>")
+    return render(request, 'website/about.html')
 
