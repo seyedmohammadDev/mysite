@@ -126,5 +126,3 @@ MEDIA_ROOT = BASE_DIR / 'media'
 STATICFILES_DIRS = [
     BASE_DIR / 'statics'
 ]
-
-

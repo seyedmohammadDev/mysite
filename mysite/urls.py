@@ -19,10 +19,14 @@ from django.contrib import admin
 from django.urls import path , include
 from django.conf import settings
 from django.conf.urls.static import static
+from .views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('website/' , include('website.urls'))
+    path('website/' , include('website.urls')),
+    path('', home_view ),
+    path('contact/' , contact_view ),
+    path('about/' , about_view),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
