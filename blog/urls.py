@@ -8,4 +8,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('' , index_blog , name='home-blog'),
     path('single/' , single_blog , name='single-blog'),
+    path('post-<int:pid>/' , test_view , name="test"),
 ]
