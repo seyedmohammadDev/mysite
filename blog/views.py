@@ -3,13 +3,15 @@ from django.http import HttpResponse,JsonResponse
 from blog.models import Post
 
 def index_blog(request):
-    return render(request,'blog/blog-home.html')
+    posts = Post.objects.filter(status=1)
+    context = {'posts':posts}
+    return render(request,'blog/blog-home.html', context)
 
-def single_blog(request):
-    return render(request , 'blog/blog-single.html')
+def single_blog(request,pid):
+    posts = get_object_or_404(Post,id=pid)
+    context = {'post':posts}
+    return render(request , 'blog/blog-single.html',context)
 
-
-def test_view(request , pid):
-    post = get_object_or_404(Post,id=pid)
-    context = {'post':post}
-    return render(request,'test.html' , context)
+# -test for dynamic url-
+# def test_view(request , pid):
+#     return render(request,'test.html')
