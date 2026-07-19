@@ -12,6 +12,5 @@ def single_blog(request,pid):
     context = {'post':posts}
     return render(request , 'blog/blog-single.html',context)
 
-# -test for dynamic url-
-# def test_view(request , pid):
-#     return render(request,'test.html')
+def test_view(request):
+    return render(request,'test.html')
